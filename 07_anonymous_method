@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  String message = 'Ini adalah Text';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Anonymous Method'),
+          ),
+          body: Center(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(message),
+              RaisedButton(
+                child: Text('Tekan saya'),
+                onPressed: () {
+                  setState(() {
+                    message = 'Tombol sudah ditekan';
+                  }); // ini adalah anonymous method
+                },
+              )
+            ],
+          ))),
+    );
+  }
+}
+
+// // Ini adalah Anonymous Method
+// () {
+//   setState(() {
+//     message = 'Tombol sudah ditekan';
+//   });
+
+// setState membutuhkan parameter yang berupa method yang akan dijalankan
+// sebelum merubah tampilan nya
