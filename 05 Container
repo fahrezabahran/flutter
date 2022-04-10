@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Latihan Container'),
+        ),
+        body: Container(
+          color: Colors.red,
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          // margin: EdgeInsets.all(10),
+          // padding: EdgeInsets.all(10), // sama saja dengan memberikan margin pada Container di dalamnya
+          child: Container(
+            // decoration: BoxDecoration(color: Colors.blueGrey),
+            // color: Colors.blue,
+            // margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[Colors.amber, Colors.blue])),
+            margin: EdgeInsets.all(30),
+            // margin: EdgeInsets.only(top: 50),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/**
+ * Margin memberikan jarak dari dalam keluar
+ *    - EdgeInsets.all() : all = left+top+right+bottom
+ *    - EdgeInsets.fromLTRB(left, top, right, bottom) : mengatur semua sisi dengan beda ukuran
+ *    - EdgeInsets.only(top: 50) : mengatur satu sisi
+ * 
+ * Padding memberikan jarak dari luar kedalam
+ */
