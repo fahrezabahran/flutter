@@ -13,15 +13,6 @@ class _MyAppState extends State<MyApp> {
   var widgets = <Widget>[];
   int counter = 1;
 
-  // _MyAppState() {
-  //   for (var i = 0; i < 50; i++) {
-  //     widgets.add(Text(
-  //       'Data ke-' + i.toString(),
-  //       style: TextStyle(fontSize: 25),
-  //     ));
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
